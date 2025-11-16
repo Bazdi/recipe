@@ -9,6 +9,8 @@ import {
   Calendar,
   Target,
   PieChart,
+  Sparkles,
+  Camera,
   X,
 } from 'lucide-react';
 
@@ -21,17 +23,44 @@ interface NavItem {
   name: string;
   path: string;
   icon: React.ElementType;
+  badge?: string;
 }
 
-const navItems: NavItem[] = [
-  { name: 'Dashboard', path: '/', icon: Home },
-  { name: 'Rezepte', path: '/recipes', icon: BookOpen },
-  { name: 'Vorratsschrank', path: '/pantry', icon: Package },
-  { name: 'Rezeptsuche', path: '/search', icon: Search },
-  { name: 'Einkaufsliste', path: '/shopping', icon: ShoppingCart },
-  { name: 'Meal Planning', path: '/planning', icon: Calendar },
-  { name: 'Ziele', path: '/goals', icon: Target },
-  { name: 'Nährwerte', path: '/nutrition', icon: PieChart },
+interface NavSection {
+  title?: string;
+  items: NavItem[];
+}
+
+const navSections: NavSection[] = [
+  {
+    items: [
+      { name: 'Dashboard', path: '/', icon: Home },
+    ],
+  },
+  {
+    title: 'KI-Features',
+    items: [
+      { name: 'Rezept-Generator', path: '/ai-recipes', icon: Sparkles, badge: 'KI' },
+      { name: 'Bilderkennung', path: '/image-recognition', icon: Camera, badge: 'KI' },
+    ],
+  },
+  {
+    title: 'Verwaltung',
+    items: [
+      { name: 'Rezepte', path: '/recipes', icon: BookOpen },
+      { name: 'Vorratsschrank', path: '/pantry', icon: Package },
+      { name: 'Einkaufsliste', path: '/shopping', icon: ShoppingCart },
+      { name: 'Ziele', path: '/goals', icon: Target },
+    ],
+  },
+  {
+    title: 'Weitere Features',
+    items: [
+      { name: 'Rezeptsuche', path: '/search', icon: Search },
+      { name: 'Meal Planning', path: '/planning', icon: Calendar },
+      { name: 'Nährwerte', path: '/nutrition', icon: PieChart },
+    ],
+  },
 ];
 
 export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
@@ -67,23 +96,39 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
           </div>
 
           {/* Navigation */}
-          <nav className="flex-1 px-4 py-6 space-y-1 overflow-y-auto">
-            {navItems.map((item) => (
-              <NavLink
-                key={item.path}
-                to={item.path}
-                onClick={onClose}
-                className={({ isActive }) =>
-                  `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
-                    isActive
-                      ? 'bg-primary-50 text-primary-700 font-medium'
-                      : 'text-gray-700 hover:bg-gray-100'
-                  }`
-                }
-              >
-                <item.icon className="w-5 h-5" />
-                <span>{item.name}</span>
-              </NavLink>
+          <nav className="flex-1 px-4 py-6 space-y-6 overflow-y-auto">
+            {navSections.map((section, sectionIndex) => (
+              <div key={sectionIndex}>
+                {section.title && (
+                  <h3 className="px-4 mb-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
+                    {section.title}
+                  </h3>
+                )}
+                <div className="space-y-1">
+                  {section.items.map((item) => (
+                    <NavLink
+                      key={item.path}
+                      to={item.path}
+                      onClick={onClose}
+                      className={({ isActive }) =>
+                        `flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
+                          isActive
+                            ? 'bg-primary-50 text-primary-700 font-medium'
+                            : 'text-gray-700 hover:bg-gray-100'
+                        }`
+                      }
+                    >
+                      <item.icon className="w-5 h-5" />
+                      <span className="flex-1">{item.name}</span>
+                      {item.badge && (
+                        <span className="px-2 py-0.5 text-xs font-semibold bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
+                          {item.badge}
+                        </span>
+                      )}
+                    </NavLink>
+                  ))}
+                </div>
+              </div>
             ))}
           </nav>
 

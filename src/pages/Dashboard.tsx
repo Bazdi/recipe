@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, Package, ShoppingCart, Target, AlertCircle } from 'lucide-react';
+import { BookOpen, Package, ShoppingCart, Target, AlertCircle, Sparkles, Camera } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/common/Card';
 import { Button } from '../components/common/Button';
 import { Loading } from '../components/common/Loading';
@@ -113,6 +113,63 @@ export const Dashboard: React.FC = () => {
           </Card>
         </Link>
       </div>
+
+      {/* AI Features Highlight */}
+      <Card className="bg-gradient-to-r from-purple-50 to-pink-50 border-purple-200">
+        <CardHeader>
+          <div className="flex items-center gap-2">
+            <Sparkles className="w-6 h-6 text-purple-600" />
+            <CardTitle className="text-purple-900">KI-gestützte Features</CardTitle>
+            <span className="px-2 py-0.5 text-xs font-semibold bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full">
+              NEU
+            </span>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <p className="text-gray-700 mb-4">
+            Nutzen Sie künstliche Intelligenz, um Rezepte zu generieren und Lebensmittel zu erkennen
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <Link to="/ai-recipes">
+              <Card hoverable className="h-full border-purple-200 hover:border-purple-400">
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                      <Sparkles className="w-6 h-6 text-purple-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">
+                        Rezept-Generator
+                      </h4>
+                      <p className="text-sm text-gray-600">
+                        Lassen Sie die KI kreative Rezepte aus Ihren Vorräten erstellen
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/image-recognition">
+              <Card hoverable className="h-full border-purple-200 hover:border-purple-400">
+                <CardContent className="pt-6">
+                  <div className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-12 h-12 bg-pink-100 rounded-lg flex items-center justify-center">
+                      <Camera className="w-6 h-6 text-pink-600" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-1">Bilderkennung</h4>
+                      <p className="text-sm text-gray-600">
+                        Fotografieren Sie Lebensmittel und lassen Sie sie automatisch erkennen
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Expiring Items Alert */}
       {expiringCount > 0 && (

@@ -7,6 +7,8 @@ import { RecipesPage } from './pages/RecipesPage';
 import { PantryPage } from './pages/PantryPage';
 import { GoalsPage } from './pages/GoalsPage';
 import { ShoppingPage } from './pages/ShoppingPage';
+import { AIRecipeGeneratorPage } from './pages/AIRecipeGeneratorPage';
+import { ImageRecognitionPage } from './pages/ImageRecognitionPage';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
             }
           >
             <Route index element={<Dashboard />} />
+            <Route path="ai-recipes" element={<AIRecipeGeneratorPage />} />
+            <Route path="image-recognition" element={<ImageRecognitionPage />} />
             <Route path="recipes" element={<RecipesPage />} />
             <Route path="pantry" element={<PantryPage />} />
             <Route path="goals" element={<GoalsPage />} />

@@ -12,8 +12,8 @@ import type {
 } from '../types/api.types';
 
 const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || 'YOUR_GEMINI_API_KEY';
-const GEMINI_MODEL = 'gemini-pro';
-const GEMINI_VISION_MODEL = 'gemini-pro-vision';
+const GEMINI_MODEL = 'gemini-1.5-flash-latest';
+const GEMINI_VISION_MODEL = 'gemini-1.5-flash-latest';
 
 class GeminiService {
   private apiKey: string;
