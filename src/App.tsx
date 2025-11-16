@@ -5,6 +5,8 @@ import { MainLayout } from './components/layout';
 import { Dashboard } from './pages/Dashboard';
 import { RecipesPage } from './pages/RecipesPage';
 import { PantryPage } from './pages/PantryPage';
+import { GoalsPage } from './pages/GoalsPage';
+import { ShoppingPage } from './pages/ShoppingPage';
 
 function App() {
   return (
@@ -27,10 +29,10 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path="recipes" element={<RecipesPage />} />
             <Route path="pantry" element={<PantryPage />} />
+            <Route path="goals" element={<GoalsPage />} />
+            <Route path="shopping" element={<ShoppingPage />} />
             <Route path="search" element={<div>Search Page (Coming Soon)</div>} />
-            <Route path="shopping" element={<div>Shopping Page (Coming Soon)</div>} />
             <Route path="planning" element={<div>Planning Page (Coming Soon)</div>} />
-            <Route path="goals" element={<div>Goals Page (Coming Soon)</div>} />
             <Route path="nutrition" element={<div>Nutrition Page (Coming Soon)</div>} />
             <Route path="profile" element={<div>Profile Page (Coming Soon)</div>} />
           </Route>
