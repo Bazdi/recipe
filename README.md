@@ -1,325 +1,339 @@
-# RecipeMaster - Intelligentes Deutsches Rezept-Tool
+# RecipeMaster 🍳
 
-Ein modernes, KI-gestütztes Rezept-Management-Tool mit Vorratsschrank-Verwaltung, Nährwert-Tracking und Google Gemini AI Integration.
+Ein intelligentes Rezept-Management-Tool mit KI-Unterstützung, entwickelt mit React, TypeScript, Supabase und Google Gemini AI.
 
-## Features
+![RecipeMaster](https://img.shields.io/badge/version-1.0.0-blue.svg)
+![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-### Phase 1: Foundation (✅ Abgeschlossen)
+## 🌟 Features
 
-- ✅ React 18 + TypeScript + Vite Setup
-- ✅ Tailwind CSS Styling
-- ✅ Supabase Backend Integration
-- ✅ User Authentication (Login/Register)
-- ✅ Protected Routes
-- ✅ Responsive Layout mit Sidebar
-- ✅ Common UI Components
-- ✅ TypeScript Type System
-- ✅ Database Migrations
-- ✅ Row Level Security (RLS)
+### ✅ Phase 1: Foundation (Abgeschlossen)
+- React 18 + TypeScript + Vite Setup
+- Tailwind CSS v4 mit modernem Design
+- Supabase Backend-Integration
+- User Authentication (Login/Register)
+- Protected Routes & Layout
+- Responsive Sidebar-Navigation
+- Wiederverwendbare UI-Komponenten
+- Vollständiges TypeScript Type System
+- Database Migrations & Row Level Security
 
-### Phase 2: Core Features (In Planung)
+### ✅ Phase 2: Core Features (Abgeschlossen)
 
-- [ ] Vorratsschrank-Management (CRUD)
-- [ ] Rezept-Datenbank mit Filter/Suche
-- [ ] User Goals System
-- [ ] Nährwert-Anzeige
-- [ ] Einkaufslisten-Verwaltung
+**Vorratsmanagement:**
+- CRUD-Operationen für Vorratsartikel
+- Ablaufdatum-Tracking mit Warnungen
+- Kategorisierung (Gemüse, Obst, Fleisch, etc.)
+- Filterung und Statistiken
 
-### Phase 3: AI Integration (In Planung)
+**Rezeptverwaltung:**
+- Vollständiges Rezept-CRUD
+- Dynamische Zutaten und Anweisungen
+- Schwierigkeitsgrade und Zeitangaben
+- Private/Öffentliche Rezepte
 
-- [ ] Google Gemini API Integration
-- [ ] Foto-Upload für Vorratsschrank-Erkennung
-- [ ] Intelligente Rezept-Generierung
-- [ ] Erweiterte Nährwertanalyse
-- [ ] KI-gestützte Suchvorschläge
+**Ziele & Tracking:**
+- 7 Zieltypen (Kalorien, Wasser, Protein, etc.)
+- Fortschrittsbalken mit visueller Rückmeldung
+- Quick Increment/Decrement Buttons
+- Statistik-Dashboard
 
-### Phase 4: Advanced Features (In Planung)
+**Einkaufslisten:**
+- Mehrere Listen verwalten
+- Checkbox-Funktionalität
+- Status-Management (Aktiv, Abgeschlossen, Archiviert)
+- Fortschritts-Tracking
 
-- [ ] Meal Planning System
-- [ ] Automatische Einkaufslisten
-- [ ] Erweiterte Dashboards
-- [ ] Mobile Optimierung
-- [ ] Performance-Optimierung
+### ✅ Phase 3: KI-Integration (Abgeschlossen)
 
-## Tech Stack
+**KI-Rezeptgenerator:**
+- Automatische Rezeptgenerierung aus verfügbaren Zutaten
+- Anpassbare Präferenzen (Küche, Zeit, Schwierigkeit, Ernährung)
+- Generierte Rezepte direkt speichern
+- Google Gemini 1.5 Flash Integration
 
-### Frontend
-- **Framework:** React 18 + TypeScript
-- **Build Tool:** Vite
-- **Styling:** Tailwind CSS
-- **Routing:** React Router v6
-- **Forms:** React Hook Form + Zod Validation
-- **Icons:** Lucide React
-- **Charts:** Recharts
+**Bilderkennung:**
+- Foto-Upload für Lebensmittelerkennung
+- KI-gestützte Bildanalyse
+- Automatisches Hinzufügen erkannter Artikel
+- Konfidenz-Scores für Erkennungen
 
-### Backend
-- **Database:** PostgreSQL (via Supabase)
-- **Authentication:** Supabase Auth
-- **Storage:** Supabase Storage
-- **Real-time:** Supabase Realtime
-- **Edge Functions:** Deno/TypeScript
+**Nährwertanalyse:**
+- KI-basierte Nährwertberechnung
+- Detaillierte Makro- und Mikronährstoffe
+- Visuelle Darstellung mit Fortschrittsbalken
+- Vitamin- und Mineralstoffanalyse
 
-### AI
-- **Google Gemini AI:** Rezept-Generierung, Nährwert-Analyse, Bild-Erkennung
+### ✅ Phase 4: Advanced Features (Abgeschlossen)
 
-## Projektstruktur
+**Meal Planning:**
+- Interaktiver Wochenkalender
+- 4 Mahlzeiten pro Tag (Frühstück, Mittagessen, Abendessen, Snack)
+- Drag-and-Drop Rezept-Zuordnung
+- Mahlzeiten als gekocht markieren
+- Automatische Einkaufslisten-Generierung
+- Export-Funktionalität
 
-```
-src/
-├── components/
-│   ├── auth/              # Login, Register, ProtectedRoute
-│   ├── common/            # Button, Input, Card, Modal, etc.
-│   ├── layout/            # Header, Sidebar, MainLayout
-│   ├── pantry/            # Vorratsschrank-Komponenten
-│   ├── recipes/           # Rezept-Komponenten
-│   ├── search/            # Such-Komponenten
-│   ├── nutrition/         # Nährwert-Komponenten
-│   ├── goals/             # Ziel-Komponenten
-│   ├── shopping/          # Einkaufslisten-Komponenten
-│   └── planning/          # Meal-Planning-Komponenten
-├── pages/                 # Dashboard, Recipes, Pantry, etc.
-├── hooks/                 # useAuth, custom hooks
-├── services/              # Supabase, Gemini, API services
-│   ├── supabase.ts        # Supabase Client + Services
-│   └── gemini.ts          # Gemini AI Service
-├── types/                 # TypeScript Type Definitions
-│   ├── database.types.ts  # Datenbank-Typen
-│   └── api.types.ts       # API Response Typen
-├── utils/                 # Helper Functions
-└── styles/                # Global Styles
+**Nutrition Dashboard:**
+- Umfassendes Nährwert-Tracking
+- Makronährstoff-Verteilung (Pie Chart)
+- Ziel-Fortschritts-Verfolgung
+- Insights und Empfehlungen
+- Durchschnittswerte pro Mahlzeit
 
-supabase/
-├── migrations/            # SQL Migrations
-│   ├── 20240101_initial_schema.sql
-│   ├── 20240102_rls_policies.sql
-│   └── 20240103_seed_nutrition_data.sql
-├── functions/             # Edge Functions
-│   ├── gemini-proxy/
-│   ├── nutrition-ai/
-│   └── recipe-generator/
-└── README.md              # Supabase Setup Anleitung
-```
+### ✅ Phase 5: Feinschliff & Deployment (Abgeschlossen)
 
-## Installation
+**Rezeptsuche:**
+- Volltextsuche in Rezepten und Zutaten
+- Erweiterte Filter (Schwierigkeit, Zeit, Tags)
+- Live-Filter-Vorschau
+- Responsive Suchergebnisse
 
-### 1. Repository klonen
+**Dokumentation:**
+- Umfassendes README
+- Environment Setup Guide (.env.example)
+- Deployment-Anleitung
 
+## 🚀 Installation
+
+### Voraussetzungen
+
+- Node.js 18+ und npm
+- Supabase Account ([supabase.com](https://supabase.com))
+- Google Gemini API Key (optional) ([ai.google.dev](https://ai.google.dev))
+
+### Schritt-für-Schritt-Anleitung
+
+1. **Repository klonen**
 ```bash
 git clone <repository-url>
 cd recipe
 ```
 
-### 2. Dependencies installieren
-
+2. **Dependencies installieren**
 ```bash
 npm install
 ```
 
-### 3. Environment Variables konfigurieren
-
-Kopiere `.env.example` zu `.env`:
-
+3. **Umgebungsvariablen einrichten**
 ```bash
 cp .env.example .env
 ```
 
-Fülle die folgenden Werte aus:
-
+Bearbeiten Sie `.env`:
 ```env
-# Supabase Configuration
 VITE_SUPABASE_URL=https://your-project.supabase.co
-VITE_SUPABASE_ANON_KEY=your-anon-key-here
-
-# Google Gemini AI
-VITE_GEMINI_API_KEY=your-gemini-api-key-here
+VITE_SUPABASE_ANON_KEY=your-anon-key
+VITE_GEMINI_API_KEY=your-gemini-api-key  # Optional
 ```
 
-### 4. Supabase Setup
+4. **Supabase Datenbank einrichten**
 
-Siehe [supabase/README.md](./supabase/README.md) für detaillierte Anweisungen.
+Führen Sie die Migrations in Ihrer Supabase SQL-Editor aus:
+```sql
+-- In Reihenfolge:
+supabase/migrations/20240101_initial_schema.sql
+supabase/migrations/20240102_rls_policies.sql
+supabase/migrations/20240103_seed_nutrition_data.sql
+```
 
-**Kurzfassung:**
-
-1. Erstelle ein Supabase-Projekt auf [supabase.com](https://supabase.com)
-2. Führe die Migrations-Dateien aus (in Reihenfolge):
-   - `20240101_initial_schema.sql`
-   - `20240102_rls_policies.sql`
-   - `20240103_seed_nutrition_data.sql`
-3. Erstelle Storage Buckets:
-   - `recipe-images` (public)
-   - `pantry-images` (public)
-
-### 5. Development Server starten
-
+5. **Entwicklungsserver starten**
 ```bash
 npm run dev
 ```
 
-App läuft unter: http://localhost:5173
+App läuft unter: `http://localhost:5173`
 
-## Scripts
-
+6. **Production Build**
 ```bash
-# Development Server
-npm run dev
-
-# TypeScript Type Check
-npm run type-check
-
-# Build für Production
 npm run build
-
-# Preview Production Build
-npm run preview
-
-# Linting
-npm run lint
 ```
 
-## Datenbankschema
+## 🛠️ Tech Stack
 
-### Haupttabellen
+### Frontend
+- **React 18** - UI Framework
+- **TypeScript** - Type Safety
+- **Vite** - Build Tool
+- **Tailwind CSS v4** - Styling
+- **React Router v6** - Navigation
+- **React Hook Form + Zod** - Formular-Handling
+- **Lucide React** - Icons
+- **React Dropzone** - File Upload
 
-- **users_profile** - User-Profile mit Präferenzen
-- **pantry_items** - Vorratsschrank-Artikel
-- **recipes** - Rezept-Datenbank (öffentlich + privat)
-- **user_goals** - Ernährungsziele
-- **shopping_lists** - Einkaufslisten
-- **meal_plans** - Meal-Planning-Kalender
-- **nutrition_database** - Nährwert-Datenbank (mit 40+ deutschen Lebensmitteln vorausgefüllt)
+### Backend & Services
+- **Supabase** - Backend-as-a-Service
+  - PostgreSQL Datenbank
+  - Authentication & RLS
+  - Storage
+  - Realtime
+- **Google Gemini AI** - KI-Features
+  - gemini-1.5-flash-latest
 
-Siehe [Database Schema Documentation](./supabase/migrations/20240101_initial_schema.sql) für Details.
+## 📁 Projektstruktur
 
-## API Services
-
-### Supabase Services
-
-```typescript
-import { authService, pantryService, recipeService, goalsService } from './services/supabase';
-
-// Authentication
-await authService.signUp(email, password, displayName);
-await authService.signIn(email, password);
-await authService.signOut();
-
-// Pantry
-const items = await pantryService.getAll();
-await pantryService.create({ name: 'Tomaten', quantity: 5, unit: 'Stück', ... });
-await pantryService.update(id, { quantity: 3 });
-await pantryService.delete(id);
-
-// Recipes
-const recipes = await recipeService.getAll();
-const recipe = await recipeService.getById(id);
-await recipeService.search('pasta', { maxPrepTime: 30 });
+```
+recipe/
+├── src/
+│   ├── components/
+│   │   ├── common/       # UI-Komponenten
+│   │   ├── auth/         # Authentication
+│   │   ├── layout/       # Layout
+│   │   ├── pantry/       # Vorratsschrank
+│   │   ├── recipes/      # Rezepte
+│   │   ├── goals/        # Ziele
+│   │   ├── shopping/     # Einkaufslisten
+│   │   ├── mealplan/     # Meal Planning
+│   │   └── ai/           # KI-Features
+│   ├── hooks/            # Custom Hooks
+│   ├── pages/            # Seiten
+│   ├── services/         # API Services
+│   ├── types/            # TypeScript Types
+│   └── App.tsx
+├── supabase/
+│   └── migrations/       # SQL Migrations
+└── package.json
 ```
 
-### Gemini AI Service
+## 🗄️ Datenbankstruktur
 
-```typescript
-import { geminiService } from './services/gemini';
+### Tabellen
 
-// Rezept-Generierung
-const recipes = await geminiService.generateRecipes({
-  ingredients: ['Tomaten', 'Pasta', 'Knoblauch'],
-  preferences: {
-    dietary: ['vegetarisch'],
-    maxTime: 30,
-    servings: 2
-  }
-});
+- `users_profile` - Benutzerprofile
+- `pantry_items` - Vorratsartikel
+- `recipes` - Rezepte mit Zutaten
+- `user_goals` - Ernährungsziele
+- `shopping_lists` - Einkaufslisten
+- `meal_plans` - Essensplanung
+- `nutrition_database` - Nährwertdatenbank (40+ deutsche Lebensmittel)
 
-// Nährwert-Analyse
-const nutrition = await geminiService.analyzeNutrition({
-  ingredients: [
-    { name: 'Tomaten', quantity: 200, unit: 'g' },
-    { name: 'Pasta', quantity: 100, unit: 'g' }
-  ]
-});
+### Row Level Security (RLS)
 
-// Bild-Analyse
-const analysis = await geminiService.analyzeImage({
-  imageBase64: base64String,
-  type: 'pantry'
-});
+- Alle Tabellen sind mit RLS geschützt
+- Benutzer sehen nur ihre eigenen Daten
+- Öffentliche Rezepte sind für alle lesbar
+
+## 🔑 Supabase Setup
+
+1. **Projekt erstellen** auf [supabase.com](https://supabase.com)
+2. **SQL-Migrationen** im SQL Editor ausführen
+3. **Environment Variables** kopieren
+4. **Storage Buckets** erstellen (optional):
+   - `recipe-images`
+   - `pantry-images`
+
+## 🤖 Google Gemini AI Setup (Optional)
+
+1. API Key auf [ai.google.dev](https://ai.google.dev) erstellen
+2. In `.env` eintragen: `VITE_GEMINI_API_KEY=your-key`
+
+### KI-Features ohne API Key:
+- Rezeptgenerierung nicht verfügbar
+- Bilderkennung nicht verfügbar
+- Nährwertanalyse nicht verfügbar
+- Alle anderen Features funktionieren normal
+
+## 📝 Verwendung
+
+### Erste Schritte
+
+1. **Registrieren** - Konto erstellen
+2. **Vorratsschrank** - Zutaten hinzufügen
+3. **Rezepte** - Eigene Rezepte erstellen oder KI nutzen
+4. **Ziele** - Ernährungsziele definieren
+5. **Meal Plan** - Woche planen
+6. **Einkaufsliste** - Aus Meal Plan generieren
+
+## 🧪 Entwicklung
+
+### Scripts
+
+```bash
+npm run dev          # Entwicklungsserver
+npm run build        # Production Build
+npm run preview      # Build Vorschau
+npm run lint         # Linting
 ```
 
-## Authentication Flow
+### Code-Qualität
 
-Die App nutzt Supabase Auth mit Email/Password:
+- TypeScript Strict Mode
+- ESLint für Code-Qualität
+- Component-basierte Architektur
+- Custom Hooks für State Management
 
-1. User registriert sich über `/register`
-2. Automatische Erstellung eines User-Profils (via Trigger)
-3. Login über `/login`
-4. Geschützte Routen nutzen `<ProtectedRoute>`
-5. Auth-State wird via `useAuth()` Hook verwaltet
+## 🔒 Sicherheit
 
-## Deployment
+- ✅ Row Level Security (RLS)
+- ✅ Umgebungsvariablen für Secrets
+- ✅ Passwort-Hashing via Supabase
+- ✅ CSRF-Schutz
+- ✅ XSS-Schutz durch React
+
+⚠️ **Produktions-Hinweis**: Gemini API Calls sollten über Supabase Edge Functions laufen, nicht direkt vom Client
+
+## 🚢 Deployment
 
 ### Vercel (Empfohlen)
 
-```bash
-# Vercel CLI installieren
-npm i -g vercel
+1. Repository zu GitHub pushen
+2. Mit Vercel verbinden
+3. Environment Variables eintragen
+4. Automatisches Deployment
 
-# Deploy
-vercel
-```
+### Netlify
 
-### Manual Build
+1. Build Command: `npm run build`
+2. Publish Directory: `dist`
+3. Environment Variables eintragen
 
-```bash
-# Production Build erstellen
-npm run build
+### Andere Plattformen
 
-# dist/ Ordner auf beliebigem Static Host deployen
-```
+Funktioniert auf allen Static Hosting Plattformen (Cloudflare Pages, GitHub Pages, etc.)
 
-## Environment Variables für Production
+## 📊 Features-Übersicht
 
-Stelle sicher, dass folgende Environment Variables gesetzt sind:
+| Feature | Status | Beschreibung |
+|---------|--------|--------------|
+| Authentication | ✅ | Email/Password Login |
+| Vorratsschrank | ✅ | CRUD, Ablaufdatum, Kategorien |
+| Rezepte | ✅ | CRUD, Privat/Öffentlich |
+| Rezeptsuche | ✅ | Volltext, Filter |
+| KI-Rezeptgenerator | ✅ | Gemini AI |
+| Bilderkennung | ✅ | Gemini Vision |
+| Nährwertanalyse | ✅ | KI-basiert |
+| Ziele-Tracking | ✅ | 7 Zieltypen |
+| Einkaufslisten | ✅ | Mehrere Listen |
+| Meal Planning | ✅ | Wochenkalender |
+| Nutrition Dashboard | ✅ | Makro-Tracking |
 
-- `VITE_SUPABASE_URL`
-- `VITE_SUPABASE_ANON_KEY`
-- `VITE_GEMINI_API_KEY`
+## 🤝 Beitragen
 
-## Sicherheit
+Contributions sind willkommen!
 
-- ✅ Row Level Security (RLS) aktiviert
-- ✅ Input Validation mit Zod
-- ✅ Protected Routes
-- ✅ API Keys in Environment Variables
-- ⚠️ **Wichtig:** Gemini API Calls sollten über Supabase Edge Functions laufen (nicht direkt vom Client)
+1. Fork das Repository
+2. Feature Branch erstellen
+3. Änderungen committen
+4. Pull Request erstellen
 
-## Roadmap
+## 📄 Lizenz
 
-### Kurzfristig (1-2 Monate)
-- [ ] Phase 2: Core Features implementieren
-- [ ] Responsive Design verbessern
-- [ ] Unit Tests schreiben
+MIT License
 
-### Mittelfristig (3-6 Monate)
-- [ ] Phase 3: AI Integration
-- [ ] PWA Support
-- [ ] Offline-Modus
+## 🙏 Credits
 
-### Langfristig (6+ Monate)
-- [ ] Mobile App (React Native)
-- [ ] Multi-Language Support
-- [ ] Recipe Sharing Community
+- [Supabase](https://supabase.com) - Backend
+- [Google Gemini](https://ai.google.dev) - AI
+- [Lucide](https://lucide.dev) - Icons
+- [Tailwind CSS](https://tailwindcss.com) - Styling
 
-## Contributing
+## 📞 Support
 
-Contributions sind willkommen! Bitte erstelle einen Pull Request oder öffne ein Issue.
-
-## License
-
-MIT
-
-## Support
-
-Bei Fragen oder Problemen, bitte ein Issue erstellen.
+- GitHub Issues für Bugs
+- Pull Requests für Features
 
 ---
 
-**Built with ❤️ using React, TypeScript, Supabase & Google Gemini AI**
+**RecipeMaster** - Intelligentes Kochen mit KI-Unterstützung 🍳✨
+
+**Version 1.0.0** - Alle Phasen abgeschlossen!
