@@ -9,6 +9,8 @@ import { GoalsPage } from './pages/GoalsPage';
 import { ShoppingPage } from './pages/ShoppingPage';
 import { AIRecipeGeneratorPage } from './pages/AIRecipeGeneratorPage';
 import { ImageRecognitionPage } from './pages/ImageRecognitionPage';
+import { MealPlanningPage } from './pages/MealPlanningPage';
+import { NutritionDashboardPage } from './pages/NutritionDashboardPage';
 
 function App() {
   return (
@@ -35,9 +37,9 @@ function App() {
             <Route path="pantry" element={<PantryPage />} />
             <Route path="goals" element={<GoalsPage />} />
             <Route path="shopping" element={<ShoppingPage />} />
+            <Route path="planning" element={<MealPlanningPage />} />
+            <Route path="nutrition" element={<NutritionDashboardPage />} />
             <Route path="search" element={<div>Search Page (Coming Soon)</div>} />
-            <Route path="planning" element={<div>Planning Page (Coming Soon)</div>} />
-            <Route path="nutrition" element={<div>Nutrition Page (Coming Soon)</div>} />
             <Route path="profile" element={<div>Profile Page (Coming Soon)</div>} />
           </Route>
 

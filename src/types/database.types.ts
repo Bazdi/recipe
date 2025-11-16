@@ -187,10 +187,13 @@ export type ShoppingListStatus = 'Aktiv' | 'Abgeschlossen' | 'Archiviert';
 export interface MealPlan {
   id: string;
   user_id: string;
-  plan_date: string; // ISO Date
-  meal_type: MealType;
   recipe_id: string;
+  date: string; // ISO Date
+  meal_type: MealType;
   servings: number;
+  notes: string | null;
+  is_completed: boolean;
+  recipe?: Recipe; // Populated when queried with joins
   created_at: string;
 }
 
