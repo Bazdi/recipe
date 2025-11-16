@@ -11,6 +11,7 @@ import { AIRecipeGeneratorPage } from './pages/AIRecipeGeneratorPage';
 import { ImageRecognitionPage } from './pages/ImageRecognitionPage';
 import { MealPlanningPage } from './pages/MealPlanningPage';
 import { NutritionDashboardPage } from './pages/NutritionDashboardPage';
+import { RecipeSearchPage } from './pages/RecipeSearchPage';
 
 function App() {
   return (
@@ -39,7 +40,7 @@ function App() {
             <Route path="shopping" element={<ShoppingPage />} />
             <Route path="planning" element={<MealPlanningPage />} />
             <Route path="nutrition" element={<NutritionDashboardPage />} />
-            <Route path="search" element={<div>Search Page (Coming Soon)</div>} />
+            <Route path="search" element={<RecipeSearchPage />} />
             <Route path="profile" element={<div>Profile Page (Coming Soon)</div>} />
           </Route>
 
